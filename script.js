@@ -1,18 +1,27 @@
-// Data do início do relacionamento
-const dataInicio = new Date("2023-02-14T00:00:00"); // Exemplo: 14 de fevereiro de 2023
+const dataInicio = new Date("2023-03-25T22:00:00"); // altere a data e hora aqui
+const contador = document.getElementById("contador");
 
 function atualizarContador() {
   const agora = new Date();
-  const diferenca = agora - dataInicio;
+  let diff = agora - dataInicio;
 
-  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
-  const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
-  const segundos = Math.floor((diferenca / 1000) % 60);
+  const segundos = Math.floor(diff / 1000) % 60;
+  const minutos = Math.floor(diff / (1000 * 60)) % 60;
+  const horas = Math.floor(diff / (1000 * 60 * 60)) % 24;
 
-  document.getElementById("contador").innerHTML =
-    `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos.`;
+  let diasTotais = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let anos = Math.floor(diasTotais / 365);
+  diasTotais %= 365;
+  let meses = Math.floor(diasTotais / 30);
+  let dias = diasTotais % 30;
+
+  contador.innerHTML = `${anos} anos, ${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos, ${segundos} segundos juntos 💞`;
 }
 
 setInterval(atualizarContador, 1000);
 atualizarContador();
+
+function tocarMusica() {
+  const audio = document.getElementById("audio");
+  audio.play();
+}
