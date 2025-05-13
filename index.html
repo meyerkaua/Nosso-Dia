@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Nosso Dia 💖</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosso Amor</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Eu te amo, Andreia 💕</h1>
-    <p>Estamos juntos há:</p>
-    <div id="contador"></div>
+    <div class="header">
+      <div class="heart">❤️</div>
+      <h1>Nosso Amor</h1>
+    </div>
+    <div class="contador" id="contador"></div>
+    <div class="imagem">
+      <img src="img/cachorro.jpg" alt="Foto especial" />
+    </div>
+    <div class="musica">
+      <button onclick="tocarMusica()">
+        ▶️ Tocar Música
+      </button>
+      <p>Nossa trilha sonora 🎶</p>
+    </div>
   </div>
+  <audio id="audio" src="music/musica.mp3"></audio>
   <script src="script.js"></script>
 </body>
 </html>
