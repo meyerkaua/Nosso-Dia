@@ -1,0 +1,89 @@
+// Música
+const playPauseBtn = document.getElementById('playPauseBtn');
+const audio = document.getElementById('audio');
+let isPlaying = false;
+
+playPauseBtn.addEventListener('click', () => {
+  isPlaying ? audio.pause() : audio.play();
+});
+
+audio.addEventListener('play', () => {
+  isPlaying = true;
+  playPauseBtn.textContent = '⏸️';
+});
+
+audio.addEventListener('pause', () => {
+  isPlaying = false;
+  playPauseBtn.textContent = '▶️';
+});
+
+// Carrossel
+const carousel = document.getElementById('carousel');
+const images = carousel.querySelectorAll('img');
+let index = 0;
+
+function showSlide(i) {
+  const width = carousel.clientWidth;
+  carousel.style.transform = `translateX(-${i * 100}%)`;
+}
+
+document.querySelector('.prev').addEventListener('click', () => {
+  index = (index - 1 + images.length) % images.length;
+  showSlide(index);
+});
+
+document.querySelector('.next').addEventListener('click', () => {
+  index = (index + 1) % images.length;
+  showSlide(index);
+});
+
+// Auto-play
+setInterval(() => {
+  index = (index + 1) % images.length;
+  showSlide(index);
+}, 5000);
+
+const timer = document.getElementById('timer');
+const startDate = new Date('2025-02-23T16:30:00');
+
+function updateTimer() {
+  const now = new Date();
+
+  let years = now.getFullYear() - startDate.getFullYear();
+  let months = now.getMonth() - startDate.getMonth();
+  let days = now.getDate() - startDate.getDate();
+  let hours = now.getHours() - startDate.getHours();
+  let minutes = now.getMinutes() - startDate.getMinutes();
+  let seconds = now.getSeconds() - startDate.getSeconds();
+
+  // Ajustes se algum valor for negativo
+  if (seconds < 0) {
+    seconds += 60;
+    minutes--;
+  }
+  if (minutes < 0) {
+    minutes += 60;
+    hours--;
+  }
+  if (hours < 0) {
+    hours += 24;
+    days--;
+  }
+  if (days < 0) {
+    const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+    days += prevMonth.getDate();
+    months--;
+  }
+  if (months < 0) {
+    months += 12;
+    years--;
+  }
+
+  timer.textContent = `${years} anos, ${months} meses, ${days} dias, ${hours} horas ${minutes} minutos ${seconds} segundos`;
+}
+
+setInterval(updateTimer, 1000);
+updateTimer();
+
+
+
