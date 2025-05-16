@@ -10,18 +10,32 @@
 
   <!-- 🎵 Música -->
   <div class="music-player">
-    <img src="images/album.jpg" alt="Capa do Álbum" class="album-cover">
-    <div class="music-info">
-      <h2>Sua Música</h2>
-      <p>Artista</p>
+  <img src="images/capa-1.png" alt="Capa do Álbum" class="album-cover">
+  
+  <div class="music-details">
+  <div class="text-scroll">
+    <div class="scrolling-text">
+      <span>I Think They Call This Love</span>
+      <span>I Think They Call This Love</span>
     </div>
-    <button id="playPauseBtn">▶️</button>
-    <audio id="audio" src="audio/sua-musica.mp3"></audio>
   </div>
+  <p class="track-artist">Elliot James Reay</p>
+  <div class="progress-container">
+  <span id="currentTime">0:00</span>
+  <div class="progress-bar" id="progressBar">
+    <div class="progress" id="progress"></div>
+  </div>
+  <span id="duration">0:00</span>
+</div>
+</div>
+
+  <button id="playPauseBtn">▶</button>
+  <audio id="audio" src="audio/Elliot James Reay - I Think They Call This Love (Official Music Video).mp3"></audio>
+</div>
 
   <!-- 🖼️ Carrossel de Fotos -->
   <div class="carousel-container">
-    <button class="nav prev">←</button>
+    <button class="nav prev">◀</button>
     <div class="carousel" id="carousel">
       <img src="images/amor-1.jpg" alt="Foto 1">
       <img src="images/amor-2.jpg" alt="Foto 2">
@@ -30,7 +44,7 @@
       <img src="images/amor-5.jpg" alt="Foto 5">
       <img src="images/amor-6.jpg" alt="Foto 6">
     </div>
-    <button class="nav next">→</button>
+    <button class="nav next">▶</button>
   </div>
 
   <!-- ⏳ Contador de Tempo de Namoro -->
