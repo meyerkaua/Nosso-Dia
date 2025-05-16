@@ -1,0 +1,211 @@
+body {
+  background: linear-gradient(135deg, #080b19, #08132e, #0a1638);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #1e2637;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Música */
+.music-player {
+  background: #1e1e1e;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  max-width: 355px;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  color: white;
+  overflow: hidden;
+}
+
+.album-cover {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.music-details {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-scroll {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 22px;
+}
+
+.scrolling-text {
+  display: flex;
+  width: max-content;
+  animation: scrollLoop 12s linear infinite;
+}
+
+.scrolling-text span {
+  white-space: nowrap;
+  margin-right: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+/* Animação contínua */
+@keyframes scrollLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+.track-artist {
+  font-size: 14px;
+  color: #ccc;
+  margin: 5px 0;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 5px;
+  background: #555;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer; /* Adiciona o ponteiro para indicar clicável */
+}
+
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: white;
+  transition: width 0.2s linear;
+}
+
+#playPauseBtn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* Carrossel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.prev { left: 10px; color: #fff; }
+.next { right: 10px; color: #fff; }
+
+/* Contador */
+.contador {
+  margin-top: 20px;
+  text-align: center;
+  color: #ccc;
+  font-size: 10px;
+}
+
+#timer {
+  white-space: pre-line;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #494c59;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Texto romântico */
+.mensagem {
+  max-width: 350px;
+  padding: 1rem;
+  border-radius: 15px;
+  text-align: justify; 
+  text-align-last: center;      
+  margin: 0 auto 2rem;         
+  color: #fff;
+}
+
+.heart-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.heart {
+  position: absolute;
+  color: pink;
+  font-size: 20px;
+  animation: fall 5s linear forwards;
+  opacity: 0.9;
+  will-change: transform, opacity;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) translateX(30px) rotate(360deg);
+    opacity: 0;
+  }
+}
