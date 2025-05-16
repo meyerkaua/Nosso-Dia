@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #fff0f6;
+  background-color: #1e2637;
   color: #333;
   display: flex;
   flex-direction: column;
@@ -11,34 +11,103 @@ body {
 
 /* Música */
 .music-player {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 0 10px #f0c0d0;
+  background: #1e1e1e;
+  border-radius: 15px;
   display: flex;
   align-items: center;
   padding: 1rem;
   width: 100%;
   max-width: 400px;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  color: white;
+  overflow: hidden;
 }
 
 .album-cover {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 10px;
+  object-fit: cover;
 }
 
-.music-info {
-  flex-grow: 1;
+.music-details {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-scroll {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 22px;
+}
+
+.scrolling-text {
+  display: flex;
+  width: max-content;
+  animation: scrollLoop 12s linear infinite;
+}
+
+.scrolling-text span {
+  white-space: nowrap;
+  margin-right: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+/* Animação contínua */
+@keyframes scrollLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+.track-artist {
+  font-size: 14px;
+  color: #ccc;
+  margin: 5px 0;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 5px;
+  background: #555;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer; /* Adiciona o ponteiro para indicar clicável */
+}
+
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: white;
+  transition: width 0.2s linear;
 }
 
 #playPauseBtn {
-  font-size: 24px;
+  font-size: 28px;
   background: none;
   border: none;
+  color: white;
   cursor: pointer;
 }
+
 
 /* Carrossel */
 .carousel-container {
@@ -61,14 +130,15 @@ body {
 }
 
 .nav {
+  height: 25px;
+  width: 25px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #f48fb1;
+  background: #ffffff;
   border: none;
-  padding: 0.5rem;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 15px;
   border-radius: 50%;
   z-index: 1;
 }
@@ -80,6 +150,7 @@ body {
 .contador {
   margin: 1rem 0;
   text-align: center;
+  color: #ccc;
 }
 
 #timer {
