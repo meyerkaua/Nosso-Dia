@@ -17,7 +17,7 @@ body {
   align-items: center;
   padding: 1rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 380px;
   gap: 1rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -135,16 +135,16 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #ffffff;
+  background: none;
   border: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 30px;
   border-radius: 50%;
   z-index: 1;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 10px; color: #fff; }
+.next { right: 10px; color: #fff; }
 
 /* Contador */
 .contador {
