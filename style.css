@@ -130,8 +130,6 @@ body {
 }
 
 .nav {
-  height: 25px;
-  width: 25px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -148,19 +146,21 @@ body {
 
 /* Contador */
 .contador {
-  margin: 1rem 0;
+  margin-top: 0px;
   text-align: center;
   color: #ccc;
+  font-size: 13px;
 }
 
 #timer {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
+  color: #fff;
 }
 
 /* Texto romântico */
 .mensagem {
-  max-width: 400px;
+  max-width: 350px;
   background: #ffe4ec;
   padding: 1rem;
   border-radius: 15px;
