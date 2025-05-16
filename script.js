@@ -135,11 +135,42 @@ function updateTimer() {
     years--;
   }
 
-  timer.textContent = `${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+  timer.textContent = `${years} anos, ${months} meses, ${days} dias\n${hours} horas, ${minutes} minutos e ${seconds} segundos\n ❤️`;
 }
 
 setInterval(updateTimer, 1000);
 updateTimer();
+
+const heartContainer = document.createElement('div');
+heartContainer.classList.add('heart-container');
+document.body.appendChild(heartContainer);
+
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.textContent = '❤️';
+
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (16 + Math.random() * 24) + 'px';
+
+  const duration = 4 + Math.random() * 3;
+  heart.style.animationDuration = `${duration}s`;
+
+  heartContainer.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, duration * 1000);
+}
+
+// Inicia a chuva de corações por 5 segundos
+const interval = setInterval(createHeart, 200);
+
+// Para a criação após 5 segundos (ajuste aqui se quiser mais/menos tempo)
+setTimeout(() => {
+  clearInterval(interval);
+}, 5000);
+
 
 
 
